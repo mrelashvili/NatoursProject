@@ -7,6 +7,14 @@
 
   &:not(:last-child) {
     margin-bottom: variables.$gutter-vertical;
+    @include mixins.respond(tabport) {
+      margin-bottom: variables.$gutter-vertical-small;
+    }
+  }
+
+  @include mixins.respond(tabport) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   @include mixins.clearfix;
@@ -16,6 +24,14 @@
 
     &:not(:last-child) {
       margin-right: variables.$gutter-horizontal;
+      @include mixins.respond(tabport) {
+        margin-right: 0;
+        margin-bottom: variables.$gutter-vertical-small;
+      }
+    }
+
+    @include mixins.respond(tabport) {
+      width: 100% !important;
     }
   }
 
